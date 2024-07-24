@@ -1,0 +1,61 @@
+@import './App.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#f0f2f5] dark:bg-[#121212];
+  }
+}
+
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hovered-content {
+  overflow: hidden;
+  transition:
+    opacity 0.3s ease-in-out,
+    height 0.3s ease-in-out;
+}
+
+.hovered-content.visible {
+  opacity: 1;
+}
+
+/* Custom CSS to hide time icon */
+.hide-time-icon::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.hide-time-icon::-webkit-inner-spin-button {
+  display: none;
+}
+
+.hide-time-icon::-webkit-clear-button {
+  display: none;
+}
+
+.hide-scrollnumber::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@layer utilities {
+  .selection-gradient {
+    background-clip: padding-box;
+    border-image-slice: 1;
+    border-width: 2px;
+    border-image-source: linear-gradient(45deg, #84dccf, #453da7);
+    border-radius: 10px !important;
+  }
+
+  .border-radius-container {
+    border-radius: 8px !important;
+    overflow: hidden;
+  }
+}
